@@ -1,0 +1,146 @@
+### PyCharm+all ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# SonarLint plugin
+.idea/sonarlint/
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+### PyCharm+all Patch ###
+# Ignore everything but code style settings and run configurations
+# that are supposed to be shared within teams.
+
+.idea/*
+
+!.idea/codeStyles
+!.idea/runConfigurations
+
+.idea
+
+*.txt
+*.log
+
+# General
+../.DS_Store
+../.idea/
+
+# Specific directories
+1.2NetworkEssentials/
+6m-cloud-1.11-high-availability/
+6m-cloud-1.12-disaster-recovery/
+6m-cloud-1.5-operating-systems-windows/
+6m-cloud-1.6-operating-systems-linux/
+6m-cloud-1.7-cpu-threading-processing/
+6m-cloud-1.8-disk-memory-storage/
+6m-cloud-2-assessment/
+6m-cloud-2.1-cloud-computing/
+6m-cloud-2.10-cdn-and-availability-zones/
+6m-cloud-2.11-principles-in-cloud-architecture-design-security/
+6m-cloud-2.12-principles-in-cloud-architecture-design-reliability/
+6m-cloud-2.13-principles-in-cloud-architecture-design-performance/
+6m-cloud-2.14-principles-in-cloud-architecture-design-cost-optimization/
+6m-cloud-2.15-principles-in-cloud-architecture-design-operational-excellence/
+6m-cloud-2.16-infrastructure-as-code/
+6m-cloud-2.2-cloud-platform/
+6m-cloud-2.3-developers-tool/
+6m-cloud-2.4-iaas-paas-saas/
+6m-cloud-2.5-database-as-a-service/
+6m-cloud-2.6-permission-policies/
+6m-cloud-2.7-security-groups/
+6m-cloud-2.8-software-deployment-requirements/
+6m-cloud-2.9-deployment-as-a-service/
+6m-cloud-3.1-introduction-to-git-i/
+6m-cloud-3.2-introduction-to-git-ii/
+AwsSdk/
+DockerGettingStarted/
+chatgpt-clone/
+cicd-terraform/
+docker-aquasec/
+ecr-with-dockerfile/
+ecs-with-terraform/
+first-docker-exercise/
+flaskChatOpenAIUI/
+learn-terraform-aws-instance/
+learn-terraform-docker-container/
+mysimpleminiproject/
+open-webui/
+simple-ec2-create/
+simple-terraform-module/
+terraform-multi-env/
+
+# Terraform specific
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
