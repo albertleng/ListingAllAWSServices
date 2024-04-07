@@ -14,10 +14,17 @@ logging.basicConfig(level=logging.INFO,
                     ])
 logger = logging.getLogger()
 
+# Get the owner tag value from environment variables, default to 'AlbertLeng' if not found
 OwnerTagValue = os.environ.get('OwnerTagValue', 'AlbertLeng')
 
 
 def list_my_ec2_instances():
+    """
+    List all EC2 instances owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the instance ID and state of each EC2 instance.
+    """
     logger.info("Listing EC2 instances...")
     ec2_client = boto3.client('ec2')
     instances = ec2_client.describe_instances(
@@ -33,6 +40,12 @@ def list_my_ec2_instances():
 
 
 def list_my_rds_instances():
+    """
+    List all RDS instances owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the DB instance identifier and status of each RDS instance.
+    """
     logger.info("Listing RDS instances...")
     rds_client = boto3.client('rds')
     instances = rds_client.describe_db_instances()
@@ -51,6 +64,12 @@ def list_my_rds_instances():
 
 
 def list_my_ecs_services():
+    """
+    List all ECS services owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the cluster ARN and service ARN of each ECS service.
+    """
     logger.info("Listing ECS services...")
     ecs_client = boto3.client('ecs')
     clusters = ecs_client.list_clusters()['clusterArns']
@@ -68,6 +87,12 @@ def list_my_ecs_services():
 
 
 def list_my_ebs_volumes():
+    """
+    List all EBS volumes owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the volume ID, state, and size of each EBS volume.
+    """
     logger.info("Listing EBS volumes...")
     ec2_client = boto3.client('ec2')
     volumes = ec2_client.describe_volumes(
@@ -82,6 +107,12 @@ def list_my_ebs_volumes():
 
 
 def list_my_s3_buckets():
+    """
+    List all S3 buckets owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the bucket name of each S3 bucket.
+    """
     logger.info("Listing S3 buckets...")
     s3_client = boto3.client('s3')
     buckets = s3_client.list_buckets()
@@ -102,6 +133,12 @@ def list_my_s3_buckets():
 
 
 def list_my_security_groups():
+    """
+    List all security groups owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the group ID and name of each security group.
+    """
     logger.info("Listing security groups...")
     ec2_client = boto3.client('ec2')
     security_groups = ec2_client.describe_security_groups(
@@ -115,6 +152,12 @@ def list_my_security_groups():
 
 
 def list_my_key_pairs():
+    """
+    List all key pairs owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the key name and fingerprint of each key pair.
+    """
     logger.info("Listing key pairs...")
     ec2_client = boto3.client('ec2')
     key_pairs = ec2_client.describe_key_pairs(
@@ -129,6 +172,12 @@ def list_my_key_pairs():
 
 
 def list_my_iam_roles():
+    """
+    List all IAM roles owned by the user.
+
+    Returns:
+        list: A list of dictionaries containing the role name and ID of each IAM role.
+    """
     logger.info("Listing IAM roles...")
     iam_client = boto3.client('iam')
     roles = iam_client.list_roles()
@@ -144,6 +193,9 @@ def list_my_iam_roles():
 
 
 def delete_existing_txt_files():
+    """
+    Delete all existing .txt files in the current directory.
+    """
     logger.info("Deleting existing .txt files...")
     txt_files = glob.glob('*.txt')
     for file in txt_files:
@@ -152,6 +204,14 @@ def delete_existing_txt_files():
 
 
 def write_to_file(filename, data, service_name):
+    """
+    Write the provided data to a file.
+
+    Args:
+        filename (str): The name of the file to write to.
+        data (list): The data to write to the file.
+        service_name (str): The name of the AWS service the data is related to.
+    """
     if data:
         logger.info(f"Writing {service_name} data to {filename}...")
         with open(filename, 'a') as file:
@@ -164,6 +224,9 @@ def write_to_file(filename, data, service_name):
 
 
 def main():
+    """
+    Main function to execute the script.
+    """
     delete_existing_txt_files()
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     output_filename = f'{timestamp}_all_my_instances_services.txt'
